@@ -10,8 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y openbox lxdm xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-drv-evdev xorg-x11-drv-libinput xorg-x11-drv-fbdev xorg-x11-drv-vesa xorg-x11-drv-vmware xorg-x11-utils mesa-dri-drivers xterm dejavu-sans-fonts pipewire pipewire-pulseaudio wireplumber pavucontrol
-
+dnf5 install -y openbox lxdm xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-drv-evdev xorg-x11-drv-libinput xorg-x11-drv-vesa xorg-x11-drv-vmware xterm dejavu-sans-fonts pipewire pipewire-pulseaudio wireplumber pavucontrol --skip-broken
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
