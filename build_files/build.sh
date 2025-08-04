@@ -9,10 +9,11 @@ set -ouex pipefail && \
     xdg-utils xdg-user-dirs \
     xorg-x11-server-Xorg xorg-x11-xinit \
     xorg-x11-drv-evdev xorg-x11-drv-libinput xorg-x11-drv-vesa xorg-x11-drv-vmware \
-    xsecurelock xdotool xload xclip xclock xterm xset xsetroot xmodmap xrandr \
-    x11vnc dejavu-sans-fonts \
+    xsecurelock xdotool xload xclip xclock xkill xterm xset xsetroot xmodmap xrandr \
+    papirus-icon-theme google-noto-emoji-fonts google-nono-fonts-all dejavu-sans-fonts \
+    google-roboto-fonts google-roboto-mono-fonts google-roboto-slab-fonts \
     pipewire pipewire-pulseaudio wireplumber pavucontrol \
-    obs-studio vlc ffmpeg sox \
+    qemu-kvm x11vnc obs-studio vlc ffmpeg sox \
     v4l-utils v4l2loopback \
     picom arandr thunar tumbler \
     mpv playerctl rofi feh \
