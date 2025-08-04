@@ -3,13 +3,7 @@
 set -ouex pipefail
 
 ### Install packages
-
-# Set up environment for non-interactive installs
-export DNF5_ASSUME_ALWAYS_YES=true
-export DNF5_DISABLE_REPO_EXCLUDES=all
-
-# Install system and GUI packages
-RUN set -ouex pipefail && \
+set -ouex pipefail && \
   dnf5 install -y \
     openbox greetd tuigreet gtkgreet \
     xdg-utils xdg-user-dirs \
@@ -26,16 +20,19 @@ RUN set -ouex pipefail && \
     input-leap kde-connect \
     python3-streamlink yt-dlp \
     cef chromium \
-    git dnf5-plugins \
     --skip-unavailable
 
-# Add GitHub CLI repo
-RUN dnf5 config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo && \
-    dnf5 install -y gh --repo gh-cli
 
-# Add Microsoft VS Code repo and install
-RUN rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
-    tee /etc/yum.repos.d/vscode.repo > /dev/null <<EOF
+dnf5 install -y git dnf5-plugins
+
+export DNF5_ASSUME_ALWAYS_YES=true
+export DNF5_DISABLE_REPO_EXCLUDES=all
+
+dnf5 config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
+dnf5 install -y gh --repo gh-cli
+
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+tee /etc/yum.repos.d/vscode.repo > /dev/null <<EOF
 [code]
 name=Visual Studio Code
 baseurl=https://packages.microsoft.com/yumrepos/vscode
@@ -45,11 +42,9 @@ type=rpm-md
 gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
+dnf5 install -y code --repo code
 
-RUN dnf5 install -y code --repo code
-
-# Cleanup (optional)
-RUN dnf5 clean all
+dnf5 clean all
 
 ## breaks I think, with white screen
 # sudo systemctl enable greetd
