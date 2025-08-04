@@ -12,15 +12,16 @@ set -ouex pipefail && \
     xsecurelock xdotool xload xclip xclock xkill xterm xset xsetroot xmodmap xrandr \
     papirus-icon-theme google-noto-emoji-fonts google-nono-fonts-all dejavu-sans-fonts \
     google-roboto-fonts google-roboto-mono-fonts google-roboto-slab-fonts \
-    pipewire pipewire-pulseaudio wireplumber pavucontrol \
+    gnome-keyring pipewire pipewire-pulseaudio wireplumber pavucontrol \
     qemu-kvm x11vnc obs-studio vlc ffmpeg sox \
     v4l-utils v4l2loopback \
     picom arandr thunar tumbler \
-    mpv playerctl rofi feh \
+    mpv mpd playerctl rofi feh \
     network-manager-applet \
     input-leap kde-connect \
     python3-streamlink yt-dlp \
     cef chromium \
+    chez-scheme \
     --skip-unavailable
 
 
