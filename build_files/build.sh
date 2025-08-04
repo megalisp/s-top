@@ -14,7 +14,7 @@ set -ouex pipefail && \
     google-roboto-fonts google-roboto-mono-fonts google-roboto-slab-fonts \
     gnome-keyring pipewire pipewire-pulseaudio wireplumber pavucontrol \
     qemu-kvm x11vnc obs-studio vlc ffmpeg sox \
-    v4l-utils v4l2loopback \
+    chatterino2 v4l-utils v4l2loopback \
     picom arandr thunar tumbler \
     mpv mpd playerctl rofi feh \
     network-manager-applet \
@@ -22,6 +22,7 @@ set -ouex pipefail && \
     python3-streamlink yt-dlp \
     cef chromium \
     chez-scheme \
+    chibi-scheme \
     --skip-unavailable
 
 
