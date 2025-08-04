@@ -5,8 +5,8 @@ set -ouex pipefail
 ### Install packages
 
 # Set up environment for non-interactive installs
-ENV DNF5_ASSUME_ALWAYS_YES=true
-ENV DNF5_DISABLE_REPO_EXCLUDES=all
+export DNF5_ASSUME_ALWAYS_YES=true
+export DNF5_DISABLE_REPO_EXCLUDES=all
 
 # Install system and GUI packages
 RUN set -ouex pipefail && \
@@ -18,6 +18,8 @@ RUN set -ouex pipefail && \
     xsecurelock xdotool xload xclip xclock xterm xset xsetroot xmodmap xrandr \
     x11vnc dejavu-sans-fonts \
     pipewire pipewire-pulseaudio wireplumber pavucontrol \
+    obs-studio vlc ffmpeg sox \
+    v4l-utils v4l2loopback \
     picom arandr thunar tumbler \
     mpv playerctl rofi feh \
     network-manager-applet \
