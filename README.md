@@ -2,6 +2,10 @@
 # S-TOP
 Basic Graphical Session Built-On S-Top.
 
+
+## Nvidia Support
+Works but is not part of the image. Look in `misc_utils/nvidia-setup.sh` to layer on and setup right kargs.
+
 ---
 
 > Old Readme
