@@ -5,7 +5,7 @@ set -ouex pipefail
 
 set -ouex pipefail && \
   dnf5 install -y \
-    openbox greetd tuigreet gtkgreet arandr \
+    openbox greetd tuigreet gtkgreet arandr picom rofi \
     xdg-utils xdg-user-dirs \
     xorg-x11-server-Xorg xorg-x11-xinit \
     xorg-x11-drv-evdev xorg-x11-drv-libinput xorg-x11-drv-vesa xorg-x11-drv-vmware \
