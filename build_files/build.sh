@@ -16,5 +16,6 @@ set -ouex pipefail && \
 
 dnf5 clean all
 
-## breaks I think, with white screen
+## Doesn't actually start
+## Think it's a conf or perm issue.
 # sudo systemctl enable greetd
